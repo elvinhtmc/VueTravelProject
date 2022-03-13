@@ -8,11 +8,10 @@
 import HomeHeader from './components/header.vue'
 export default {
   name: 'Home',
-  components:{
+  components: {
     HomeHeader
   }
 }
-
 </script>
 
 <style>
