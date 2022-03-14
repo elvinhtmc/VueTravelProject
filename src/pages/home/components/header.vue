@@ -16,8 +16,8 @@
 
 <script>
 export default {
-  name: "HomeHeader",
-};
+  name: 'HomeHeader'
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -35,9 +35,9 @@ export default {
     text-align: center;
   }
 
-    .back-icon {
-      font-size: 0.4rem;
-    }
+  .back-icon {
+    font-size: 0.4rem;
+  }
 
   .header-input {
     flex: 1;
@@ -56,8 +56,8 @@ export default {
     text-align: center;
   }
 
-    .arrow-icon {
-      font-size: 0.1rem;
-    }
+  .arrow-icon {
+    font-size: 0.1rem;
+  }
 }
 </style>
