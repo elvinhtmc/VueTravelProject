@@ -43,7 +43,7 @@ export default {
 
 <style lang="stylus" scoped>//无法改.swiper-pagination-bullet-active，因为scoped，改本样式
 .swiper-wrapper>>>.swiper-pagination-bullet-active {//穿透，在wrapper中的swiper都按照这里的走
-  background: red;
+  background: #fff;
 }
 .swiper-wrapper {
     overflow: hidden;
