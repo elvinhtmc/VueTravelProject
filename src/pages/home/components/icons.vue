@@ -20,7 +20,7 @@ export default {
       iconList:[{
         id: 'icon1',
         imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点是打发法'
+        description: '热门景点'
       },{
         id: 'icon2',
         imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import "~styles/ellipsis.styl" 
+@import "~styles/mixins.styl" 
 .icon-area {
   overflow: hidden;
   height: 0;
@@ -95,10 +95,10 @@ export default {
   right: 0;
 }
 
-img {
+  img {
   display: block;
-  margin: 0.1rem auto;
-  height: 90%;
+  margin: 0.15rem auto;
+  height: 80%;
 }
 
 .icon-desc {
@@ -106,8 +106,8 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 0.44rem;
-  line-height: 0.44rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
   text-align: center;
   ellipsis();
 }
