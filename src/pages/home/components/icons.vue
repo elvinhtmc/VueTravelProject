@@ -1,12 +1,13 @@
+/* eslint-disable */
 <template>
-  <swiper>
+  <swiper :options="swiperOption">
     <swiper-slide v-for="(page, index) of pages" :key="index">
       <div class="icon-area">
-        <div class="icon" v-for="item of iconList" :key="item.id">
+        <div class="icon" v-for="item of page" :key="item.id"><!--item of page而非iconlist  -->
           <div class="icon-img">
-            <img :src="item.imgURL" />
+            <img :src="item.imgUrl" />
           </div>
-          <p class="icon-desc">{{ item.description }}</p>
+          <p class="icon-desc">{{ item.desc}}</p>
         </div>
       </div>
     </swiper-slide>
@@ -15,64 +16,38 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data: function () {
+  props: {
+    iconList: Array
+  },
+  data () {
     return {
-      iconList:[{
-        id: 'icon1',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon2',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon3',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon4',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon5',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon6',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon7',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon8',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      },{
-        id: 'icon9',
-        imgURL: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        description: '热门景点'
-      }]
+      swiperOption: {
+        autoplay: false
+      }
     }
+  },
+  mounted () {
+    console.log(this.pages[1])
   },
   computed: {
     pages () {
-      const pages = [];
+      const pages = []
       this.iconList.forEach((item, index) => {
-        const page = Math.floor(index/8);
-        if(!pages[page]) 
-          pages[page] = [];
-        pages[page].push(item);
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
       })
-      return pages;
+      return pages
     }
   }
 }
+
 </script>
 
 <style lang="stylus" scoped>
-@import "~styles/mixins.styl" 
+@import "~styles/mixins.styl"
 .icon-area {
   overflow: hidden;
   height: 0;

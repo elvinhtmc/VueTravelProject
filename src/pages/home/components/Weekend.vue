@@ -2,10 +2,10 @@
   <div>
     <div class="weekend-title">周末去哪儿</div>
     <ul>
-      <li v-for="item of list">
+      <li v-for="item of weekendList" :key="item.id">
         <div class="item-img-wrapper">
           <img
-            :src="item.imgURL"
+            :src="item.imgUrl"
             class="item-img"
           />
         </div>
@@ -20,21 +20,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data: function () {
-    return {
-      list: [{
-        id: '0001',
-        imgURL: 'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg',
-        title: '上海东方明珠',
-        desc: '中西合璧，现代和传统各有各的精彩'
-      },
-      {
-        id: '0002',
-        imgURL: 'https://imgs.qunarzz.com/sight/source/1603/cf/762cb38938a093.jpg_r_640x214_e02c18ef.jpg',
-        title: '上海看花',
-        desc: '这个好天气，一起去看花吧'
-      }]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>
@@ -51,7 +38,7 @@ export default {
        overflow: hidden;
        height: 0;
        width: 100%;
-       padding-bottom: 34%;
+       padding-bottom: 37.09%;
       }
       .item-img {
         width: 100%;
