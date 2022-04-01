@@ -15,7 +15,7 @@ export default{
 
 <style lang = "stylus" scoped>
   @import "~styles/variables.styl"
-  .header 
+  .header
     position: relative
     overflow: hidden
     height: $headerHeight
@@ -23,7 +23,7 @@ export default{
     text-align: center
     background: $bgColor
     color:#fff
-    font-size: .32rem 
+    font-size: .32rem
     .header-back
       position:absolute
       top:0
@@ -33,7 +33,5 @@ export default{
       font-size:.4rem
       font-weight:700
       color: #fff
-
-      
 
 </style>
