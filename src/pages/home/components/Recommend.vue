@@ -3,7 +3,9 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom"
+          v-for="item of recommendList"
+          :key="item.id">
         <div class="item-img-wrapper">
           <img
             :src="item.imgUrl"
@@ -50,7 +52,7 @@ export default {
     .item-info {
       overflow: hidden;
       flex:1;
-      padding:.1rem; 
+      padding:.1rem;
       }
       .item-title {
         line-height: 0.54rem;

@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
+  <div class = "header">
     城市选择
     <router-link to = "/"><!-- /是vue路由里的根路径 -->
-     <div class="iconfont header-back">&#xe624;</div>
+     <div class = "iconfont header-back">&#xe624;</div>
     </router-link>
   </div>
 </template>

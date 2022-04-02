@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-  <swiper ref="mySwiper" :options="swiperOptions" class="swiper-wrapper"  
+  <swiper ref="mySwiper" :options="swiperOptions" class="swiper-wrapper"
   v-if="showSwiper"><!-- 模板里最好不用list.length之类的计算，放在computed计算属性 -->
     <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="img-width"

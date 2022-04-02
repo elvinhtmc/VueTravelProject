@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search">
-      <input type="text" name="search" v-model="keyword"
+      <input type="text" name="search"
       class="search-input" placeholder="输入城市名或拼音"/>
     </div>
     <div class="search-content"></div>
@@ -10,11 +10,13 @@
     </ul>
   </div>
 </template>
+
 <script>
-export default{
+export default {
   name: 'CitySearch'
 }
 </script>
+
 <style lang = "stylus" scoped>
 @import "~styles/variables.styl"
   .search
