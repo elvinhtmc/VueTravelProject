@@ -8,7 +8,8 @@
               :letter = "letter">
     </city-list>
     <city-alphabet :allCities=allCities
-    @change = handleLetterChange></city-alphabet>
+                  @change = "handleLetterChange">
+    </city-alphabet>
   </div>
 </template>
 <script>
@@ -49,7 +50,9 @@ export default{
     },
     handleLetterChange (letter) {
       this.letter = letter
+      console.log(this.letter)
     }
+
   },
   mounted () {
     this.getCityInfo()

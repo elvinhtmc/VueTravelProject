@@ -1,38 +1,38 @@
 <template>
   <ul class="list">
-    <li class="item"
-        v-for="item of letters"
-        :key="item"
-        :ref="item"
-        @touchstart.prevent="handleTouchStart"
-        @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd"
-        @click="handleLetterClick"
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @click="handleLetterClick"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
     >
-        {{item}}
+      {{item}}
     </li>
   </ul>
 </template>
 
 <script>
-import Vue from 'vue/types/umd'
-export default{
+export default {
   name: 'CityAlphabet',
   props: {
     allCities: Object
-  },
-  data () {
-    return {
-      touchStatus: false
-    }
   },
   computed: {
     letters () {
       const letters = []
       for (let i in this.allCities) {
-        letters.push(i)
+        letters.push(i) // for in 的语法，循环出的内容就是key值
       }
-      return letters
+      return letters // [A,B,C...]
+    }
+  },
+  data () {
+    return {
+      touchStatus: false
     }
   },
   methods: {
@@ -44,8 +44,11 @@ export default{
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        const startY = e.touches.offsetTop
-        console.log(startY)
+        const touchY = e.touches[0].clientY - 43 - 36 - 35 * 4
+        const index = Math.floor(touchY / 14)
+        if (index >= 0 && index < this.letters.length) {
+          this.$emit('change', this.letters[index])
+        }
       }
     },
     handleTouchEnd () {
