@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :allCities = "allCities"></city-search>
     <city-list :city = "city"
               :hotCities = "hotCities"
               :allCities = "allCities"
@@ -48,9 +48,9 @@ export default{
         // console.log(res)
       }
     },
-    handleLetterChange (letter) {
-      this.letter = letter
-      console.log(this.letter)
+    handleLetterChange (letter) { // 此处实际上接受一个参数，touch时letters，click时letter
+      this.letter = letter // 因为touch或click事件触发时才会向外传参，这两个事件不会同时触发
+      // 在更换事件时，参数letter不断变动，此处执行该函数后，子组件list的watch监听到letter的改变后，页面变化
     }
 
   },
