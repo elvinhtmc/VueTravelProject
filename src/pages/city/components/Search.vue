@@ -8,7 +8,7 @@
           <ul>
             <li class = "search-item border-bottom"
             v-for="item of list"
-            :key = "item.id">
+            :key = "item.id" @click = "handleCityClick(item.name)">
             {{item.name}}
             </li>
           </ul>
@@ -38,6 +38,11 @@ export default {
   computed: {
     hasNoData () {
       return !this.list.length // 判定是否有匹配数组,有则不显示，反之显示
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
     }
   },
   mounted () {

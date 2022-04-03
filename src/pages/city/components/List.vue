@@ -8,7 +8,7 @@
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button">
-              {{city}}
+              {{this.$store.state.city}}
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
           <div class="button-wrapper"
               v-for="item of hotCities"
               :key="item.id">
-            <div class="button">
+            <div class="button"  @click = "handleCityClick(item.name)">
               {{item.name}}
             </div>
           </div>
@@ -34,7 +34,8 @@
          <div class="item-list"> <!-- innerItem of item -->
            <div class="item border-bottom"
                 v-for="innerItem of item"
-                :key="innerItem.id">
+                :key="innerItem.id"
+                @click = "handleCityClick(innerItem.name)">
                 {{innerItem.name}}
            </div>
          </div>
@@ -58,6 +59,11 @@ export default{
     letter () {
       const element = this.$refs[this.letter][0]
       this.scroll.scrollToElement(element)
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
     }
   },
   mounted () {

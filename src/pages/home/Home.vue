@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div>
-    <home-header :city = "city"></home-header>
+    <home-header></home-header>
     <HomeSwiper :swiperList = "swiperList"></HomeSwiper><!-- 一定要把注册好的组件写入template，否则不显示 -->
     <home-icons :iconList = "iconList"></home-icons>
     <home-recommend :recommendList = "recommendList"></home-recommend>
@@ -49,8 +49,6 @@ export default {
         this.recommendList = res.data.recommendList
         this.weekendList = res.data.weekendList
       }
-      console.log(res)
-      console.log(res.data.swiperList)
     }
   },
   mounted () {
