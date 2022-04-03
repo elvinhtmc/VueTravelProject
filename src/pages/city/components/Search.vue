@@ -23,6 +23,7 @@
 
 <script>
 import BetterScroll from 'better-scroll'
+import {mapState, mapMutations} from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -42,8 +43,9 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      this.$store.commit('changeCity', city)
-    }
+      this.changeCity(city)
+    },
+    ...mapMutations(['changeCity'])
   },
   mounted () {
     this.scroll = new BetterScroll(this.$refs.search)

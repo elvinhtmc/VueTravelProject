@@ -47,6 +47,7 @@
 
 <script>
 import BetterScroll from 'better-scroll'
+import {mapState, mapMutations} from 'vuex'
 export default{
   name: 'CityList',
   props: {
@@ -55,6 +56,11 @@ export default{
     allCities: Object,
     letter: String
   },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
   watch: {
     letter () {
       const element = this.$refs[this.letter][0]
@@ -62,8 +68,9 @@ export default{
     }
   },
   methods: {
+    ...mapMutations(['changeCity']),
     handleCityClick (city) {
-      this.$store.commit('changeCity', city)
+      this.changeCity(city)
     }
   },
   mounted () {
