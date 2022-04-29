@@ -22,13 +22,14 @@ export default {
         pagination: {
           el: '.swiper-pagination'// Some Swiper option/callback...
         },
-        loop: true
+        loop: true,
+        autoplay: true
       }
     }
   },
   computed: {
     swiper () {
-      return this.$refs.mySwiper.$swiper
+      return this.$refs.mySwiper // .$swiper
     },
     showSwiper () {
       return this.swiperList.length
@@ -36,7 +37,7 @@ export default {
   },
   mounted () {
     console.log('Current Swiper instance object', this.swiper)
-    this.swiper.slideTo(3, 1000, false)
+    this.swiper.slideTo(3, 1000, true)
   }
 }
 </script>

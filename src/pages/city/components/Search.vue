@@ -73,7 +73,6 @@ export default {
           })
         }
         this.list = result
-        console.log(result)
       }, 100)
     }
   }
