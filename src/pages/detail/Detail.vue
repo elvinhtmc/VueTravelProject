@@ -3,7 +3,8 @@
     <detail-banner :galleryImgs = "galleryImgs"
     :sightName="sightName" :bannerImg="bannerImg"></detail-banner>
     <detail-header></detail-header>
-    <detail-list></detail-list>
+    <detail-list :list="list"></detail-list>
+    <div class="content"></div><!-- 设置高度，添加滚动条 -->
   </div>
 </template>
 
@@ -24,7 +25,7 @@ export default {
       sightName: '',
       bannerImg: '',
       galleryImgs: [],
-      catagoryList: []
+      list: []
     }
   },
   methods: {
@@ -38,9 +39,8 @@ export default {
         this.sightName = res.data.sightName
         this.bannerImg = res.data.bannerImg
         this.galleryImgs = res.data.galleryImgs
-        this.catagoryList = res.data.catagoryList
+        this.list = res.data.categoryList
       }
-        
     }
   },
   mounted () {
@@ -50,4 +50,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .content
+    height: 15rem
 </style>
