@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     headerScroll () {
-      const top = document.documentElement.scrollTop // 页面距顶端的距离
+      const top = document.documentElement.scrollTop ||
+      document.body.scrollTop || window.pageYOffset // 页面距顶端的距离,后两个选择避免不兼容
       if (top > 50) {
         let opacity = top / 200
         opacity = opacity > 1 ? 1 : opacity

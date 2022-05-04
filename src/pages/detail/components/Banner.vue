@@ -12,20 +12,25 @@
       </div>
     </div>
   </div>
-  <common-gallery
-  :swiperList = "galleryImgs"
-  v-show="showGallery"
-  @close="handleGalleryClose"><!-- 控制gallery是否可见,子组件事件触发父组件事件 -->
-  </common-gallery>
+  <fade-animation>
+    <common-gallery
+    :swiperList = "galleryImgs"
+    v-show="showGallery"
+    @close="handleGalleryClose">
+    <!-- 控制gallery是否可见,子组件事件触发父组件事件 -->
+    </common-gallery>
+  </fade-animation>
 </div>
 </template>
 
 <script>
+import FadeAnimation from 'common/fade/FadeAnimation'
 import CommonGallery from 'common/gallery/Gallery'
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   data () {
     return {
